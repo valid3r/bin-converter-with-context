@@ -23,8 +23,7 @@
 .from_to {
   --grid-row-start: 1;
   --background-color: rgba(0, 0, 255, 0.296);
-  display: flex;
-  flex-direction: column;
+  display: grid;
 }
 
 .from_to > label {

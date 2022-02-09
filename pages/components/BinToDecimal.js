@@ -14,6 +14,7 @@ const BinToDecimal = () => {
     setBinaryInput,
     setDecimalInput,
     reset,
+    swap,
   } = useApp();
 
   const [display, setDisplay] = useState("decToBin");
@@ -122,6 +123,7 @@ const BinToDecimal = () => {
             <option value="DEC">Decimal</option>
           </select>
         </div>
+
         <div className={style.from_to}>
           <label htmlFor="">To</label>
           <select
@@ -139,11 +141,17 @@ const BinToDecimal = () => {
         {renderDisplay()}
 
         <div className={style.buttons}>
-          <button className={style.convert_btn} onClick={convertBinToDecimal}>
-            Convert
+          <button className={style.swap_btn} onClick={swap}>
+            Swap
           </button>
           <button className={style.reset_btn} onClick={reset}>
             Reset
+          </button>
+        </div>
+
+        <div className={style.buttons}>
+          <button className={style.convert_btn} onClick={convertBinToDecimal}>
+            Convert
           </button>
         </div>
       </div>

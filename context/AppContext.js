@@ -62,11 +62,23 @@ const AppContextProvider = ({ children }) => {
     }
   };
 
+  const swap = () => {
+    console.log("%cAppContext.js line:67 swap", "color: #007acc;");
+
+    if (fromFormat == "BIN") {
+      setFromFormat("DEC");
+      setToFormat("BIN");
+    }
+
+    if (fromFormat == "DEC") {
+      setFromFormat("BIN");
+      setToFormat("DEC");
+    }
+  };
+
   const reset = () => {
     setBinaryInput("");
     setDecimalInput("");
-    setFromFormat("BIN");
-    setToFormat("DEC");
   };
 
   return (
@@ -77,6 +89,7 @@ const AppContextProvider = ({ children }) => {
         setFromFormat,
         setToFormat,
         reset,
+        swap,
         binaryInput,
         decimalInput,
         convertBinToDecimal,
