@@ -2,7 +2,7 @@ import React, { useState, useEffect, createContext } from "react";
 
 // Create Context - Define variable and their types, to be exported
 // IDK The purpose
-
+// The purpose
 /**
  *
  * The defaultValue argument is only used when a component does not have a matching Provider above it in the tree.
@@ -29,6 +29,7 @@ const AppContextProvider = ({ children }) => {
   const [binaryInput, setBinaryInput] = useState("");
   const [decimalInput, setDecimalInput] = useState("");
 
+  // TODO - Implement own algorithm for conversions
   const convertBinToDecimal = () => {
     console.log("convertBinToDecimal called");
 
@@ -63,8 +64,6 @@ const AppContextProvider = ({ children }) => {
   };
 
   const swap = () => {
-    console.log("%cAppContext.js line:67 swap", "color: #007acc;");
-
     if (fromFormat == "BIN") {
       setFromFormat("DEC");
       setToFormat("BIN");

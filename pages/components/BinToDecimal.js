@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import style from "/styles/Main.module.css";
 import useApp from "../../hooks/useApp";
+import useFetch from "../../hooks/useFetch";
 
 const BinToDecimal = () => {
   const {
@@ -17,7 +18,12 @@ const BinToDecimal = () => {
     swap,
   } = useApp();
 
+  const [data] = useFetch("https://jsonplaceholder.typicode.com/todos");
   const [display, setDisplay] = useState("decToBin");
+
+  const getData = () => {
+    console.log("%cBinToDecimal.js line:25 data", "color: #007acc;", data);
+  };
 
   useEffect(() => {
     if (fromFormat == "DEC" && toFormat == "BIN") {
@@ -152,6 +158,11 @@ const BinToDecimal = () => {
         <div className={style.buttons}>
           <button className={style.convert_btn} onClick={convertBinToDecimal}>
             Convert
+          </button>
+        </div>
+        <div className={style.buttons}>
+          <button className={style.convert_btn} onClick={getData}>
+            useFetch
           </button>
         </div>
       </div>
